@@ -11,8 +11,8 @@ kutuapp:
     host: kutuapp-test.apps.okd.baloise.dev
   readinessProbe:
     httpGet:
-      path: /
-      port: 80
+      path: /api/competition
+      port: 5757
   resources:
     requests:
       memory: 1Gi
