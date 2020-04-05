@@ -3,6 +3,10 @@ kutuapp:
   image:
     repository: luechtdiode/kutuapp
     tag: master-263041c
+  ports:
+  - name: http
+    containerPort: 5757
+    protocol: TCP  
   route:
     enabled: true
     host: kutuapp-test.apps.okd.baloise.dev
