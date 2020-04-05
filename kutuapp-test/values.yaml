@@ -7,7 +7,7 @@ kutuapp:
   route:
     enabled: true
     host: kutuapp-test.apps.okd.baloise.dev
-    port: 5757
+    port: 80
     path: /
   readinessProbe:
     httpGet:
