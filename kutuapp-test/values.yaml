@@ -25,6 +25,9 @@ kutuapp:
     emptyDir: {}
 
   volumeMounts:
+  - mountPath: /home/kutuapp
+    subPath: appdataroot
+    name: kutu-data
   - mountPath: /home/kutuapp/data
     subPath: data
     name: kutu-data
