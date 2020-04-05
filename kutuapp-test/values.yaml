@@ -1,0 +1,34 @@
+kutuapp:
+  replicaCount: 1
+  image:
+    repository: https://hub.docker.com/r/luechtdiode/kutuapp
+    tag: master-263041c
+  route:
+    enabled: true
+    host: kutuapp-test.apps.origin.baloise.dev
+    port: 5757
+    path: /
+  readinessProbe:
+    httpGet:
+      path: /
+      port: 5757
+  resources:
+    requests:
+      memory: 1Gi
+    limits:
+      memory: 2Gi
+  # env:
+  # - name: SPRING_PROFILES_ACTIVE
+  #   value: dev
+  volumes:
+  - name: kutu-data
+    emptyDir: {}
+
+  volumeMounts:
+  - mountPath: /home/data
+    subPath: data
+    name: kutu-data
+  - mountPath: /home/db
+    subPath: db
+    name: kutu-data
+  

@@ -1,7 +1,0 @@
-generic:
-  image:
-    repository: registry.baloise.dev/example/gitops-nginx-demo
-    tag: 0.3.0
-  ingress:
-    enabled: true
-    host: gitops-nginx-demo-test.apps.origin.baloise.dev
