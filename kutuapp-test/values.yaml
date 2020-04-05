@@ -8,9 +8,7 @@ kutuapp:
       servicePort: 5757
   ingress:
     enabled: true
-    host: 
-    - kutuapp-test.apps.okd.baloise.dev
-    - competition.apps.okd.baloise.dev
+    host: kutuapp-test.apps.okd.baloise.dev
   readinessProbe:
     httpGet:
       path: /
