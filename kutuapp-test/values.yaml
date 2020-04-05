@@ -12,7 +12,7 @@ kutuapp:
   readinessProbe:
     httpGet:
       path: /
-      port: 5757
+      port: 80
   resources:
     requests:
       memory: 1Gi
