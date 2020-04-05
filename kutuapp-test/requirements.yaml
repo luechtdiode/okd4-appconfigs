@@ -2,4 +2,4 @@ dependencies:
   - name: generic-chart
     version: 0.3.0
     repository: https://registry.baloise.dev/chartrepo/library
-    alias: generic
+    alias: kutuapp
