@@ -9,10 +9,6 @@ kutuapp:
   ingress:
     enabled: true
     host: kutuapp-test.apps.okd.baloise.dev
-  readinessProbe:
-    httpGet:
-      path: /api/competition
-      port: 5757
   resources:
     requests:
       memory: 1Gi
