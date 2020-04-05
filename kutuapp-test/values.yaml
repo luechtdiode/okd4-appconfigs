@@ -5,7 +5,7 @@ kutuapp:
     tag: master-263041c
   route:
     enabled: true
-    host: kutuapp-test.apps.origin.baloise.dev
+    host: kutuapp-test.apps.okd.baloise.dev
     port: 5757
     path: /
   readinessProbe:
