@@ -4,11 +4,9 @@ kutuapp:
     repository: luechtdiode/kutuapp
     tag: master-263041c
   appPort: 5757
-  route:
+  ingress:
     enabled: true
     host: kutuapp-test.apps.okd.baloise.dev
-    port: 80
-    path: /
   readinessProbe:
     httpGet:
       path: /
