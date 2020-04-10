@@ -9,6 +9,10 @@ kutuapp:
   ingress:
     enabled: true
     host: kutuapp-test.apps.okd.baloise.dev
+  ingress:
+    enabled: true
+    host: competition.sharevic.net
+
   resources:
     requests:
       memory: 1Gi
@@ -31,4 +35,3 @@ kutuapp:
   - mountPath: /home/kutuapp/db
     subPath: db
     name: kutu-data
-  
