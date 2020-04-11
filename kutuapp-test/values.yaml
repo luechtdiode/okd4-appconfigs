@@ -6,15 +6,7 @@ kutuapp:
   ports:
     http:
       containerPort: 5757
-# find a way, how to activate more than one route ...      
-#  ingress:
-#    enabled: true
-#    host: kutuapp-test.apps.okd.baloise.dev
   ingress:
-    enabled: true
-    host: competition.sharevic.net
-    wildcardPolicy: Subdomain
-
   resources:
     requests:
       memory: 1Gi
