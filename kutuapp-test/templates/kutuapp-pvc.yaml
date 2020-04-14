@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: kutuapp-data
 spec:
+  storageClassName: cephfs
   accessModes:
     - ReadWriteMany
   resources:
