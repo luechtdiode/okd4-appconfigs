@@ -2,7 +2,7 @@ kutuapp:
   replicaCount: 1
   image:
     repository: luechtdiode/kutuapp
-    tag: feature.aggregated-stages-2e103ad
+    tag: master-d9bb11d
   ports:
     http:
       containerPort: 5757
