@@ -14,8 +14,12 @@ kutudb:
   volumeMounts:
     - mountPath: /var/lib/postgresql/data
       subPath: appdataroot
-      name: kutu-data
-
+      name: kutu-data    
+  volumes:
+    - name: kutu-data
+      persistentVolumeClaim:
+        claimName: kutu-data
+        
 kutuapp:
   replicaCount: 1
   image:
@@ -45,7 +49,7 @@ kutuapp:
     subPath: db
     name: kutu-data
     
-volumes:
-  - name: kutu-data
-    persistentVolumeClaim:
-      claimName: kutu-data
+  volumes:
+    - name: kutu-data
+      persistentVolumeClaim:
+        claimName: kutu-data
