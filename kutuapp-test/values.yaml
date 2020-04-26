@@ -6,7 +6,10 @@ kutuapp:
   ports:
     http:
       containerPort: 5757
-  ingress:
+  network:
+    frontend:
+      servicePort: 5757
+      ingress:  {}
   resources:
     requests:
       memory: 1Gi
@@ -15,14 +18,20 @@ kutuapp:
   # env:
   # - name: SPRING_PROFILES_ACTIVE
   #   value: dev
+  persistence:
+    name: kutuapp-data
+    storageClass: custom-storage-class
+    enabled: true
+    accessModes: ReadWriteMany
+    size: 1Gi
 
   volumeMounts:
   - mountPath: /home/kutuapp
     subPath: appdataroot
-    name: kutu-data
+    name: kutuapp-data
   - mountPath: /home/kutuapp/data
     subPath: data
-    name: kutu-data
+    name: kutuapp-data
   - mountPath: /home/kutuapp/db
     subPath: db
-    name: kutu-data
+    name: kutuapp-data
