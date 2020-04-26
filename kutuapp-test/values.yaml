@@ -9,7 +9,12 @@ kutuapp:
   network:
     frontend:
       servicePort: 5757
-      ingress:  {}
+      ingress:
+        host: competition-test.sharevic.net
+  ingress:
+    zone: ch
+  service:
+    type: ClusterIP        
   resources:
     requests:
       memory: 1Gi
