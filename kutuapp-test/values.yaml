@@ -1,8 +1,26 @@
+kutudb:
+  replicaCount: 1
+  image:
+    repository: postgres
+    tag: 9.4
+  ports:
+    http:
+      containerPort: 5432
+  env:
+    - name: POSTGRES_USER
+      value: postgres
+    - name: POSTGRES_PASSWORD
+      value: postgres
+  volumeMounts:
+    - mountPath: /var/lib/postgresql/data
+      subPath: appdataroot
+      name: kutu-data
+
 kutuapp:
   replicaCount: 1
   image:
     repository: luechtdiode/kutuapp
-    tag: master-d9bb11d
+    tag: master-dbeee78
   ports:
     http:
       containerPort: 5757
@@ -15,9 +33,6 @@ kutuapp:
   # env:
   # - name: SPRING_PROFILES_ACTIVE
   #   value: dev
-  volumes:
-  - name: kutu-data
-    emptyDir: {}
 
   volumeMounts:
   - mountPath: /home/kutuapp
@@ -29,3 +44,8 @@ kutuapp:
   - mountPath: /home/kutuapp/db
     subPath: db
     name: kutu-data
+    
+volumes:
+  - name: kutu-data
+    persistentVolumeClaim:
+      claimName: kutu-data
