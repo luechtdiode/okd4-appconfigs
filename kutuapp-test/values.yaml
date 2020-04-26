@@ -15,11 +15,6 @@ kutuapp:
   # env:
   # - name: SPRING_PROFILES_ACTIVE
   #   value: dev
-    
-  volumes:
-    - name: kutu-data
-      persistentVolumeClaim:
-        claimName: kutu-data
 
   volumeMounts:
   - mountPath: /home/kutuapp
