@@ -26,7 +26,7 @@ kutuapp:
   persistence:
     name: kutuapp-data
     storageClassName: ceph-block
-    enabled: true
+    enabled: false
     accessModes: ReadWriteMany
     volumeMode: Block
     size: 1Gi
