@@ -25,7 +25,7 @@ kutuapp:
   #   value: dev
   persistence:
     name: kutuapp-data
-    # storageClass: trident-nfs
+    storageClass: trident-nfs-snapshot
     enabled: true
     accessModes: ReadWriteMany
     size: 1Gi
