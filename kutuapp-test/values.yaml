@@ -28,6 +28,7 @@ kutuapp:
     storageClassName: ceph-block
     enabled: true
     accessModes: ReadWriteMany
+    volumeMode: Block
     size: 1Gi
     annotations:
       volume.beta.kubernetes.io/storage-provisioner: rook-ceph.rbd.csi.ceph.com
