@@ -33,10 +33,10 @@ kutuapp:
   volumeMounts:
   - mountPath: /home/kutuapp
     subPath: appdataroot
-    name: kutuapp-data
+    name: kutu-data
   - mountPath: /home/kutuapp/data
     subPath: data
-    name: kutuapp-data
+    name: kutu-data
   - mountPath: /home/kutuapp/db
     subPath: db
-    name: kutuapp-data
+    name: kutu-data
