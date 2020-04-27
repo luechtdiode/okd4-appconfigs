@@ -34,6 +34,8 @@ kutuapp:
       volume.beta.kubernetes.io/storage-provisioner: rook-ceph.rbd.csi.ceph.com
   volumes:
   - name: kutu-data
+    persistentVolumeClaim:
+      claimName: kutu-data
   volumeMounts:
   - mountPath: /home/kutuapp
     subPath: appdataroot
