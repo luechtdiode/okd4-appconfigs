@@ -10,7 +10,7 @@ kutuapp:
     frontend:
       servicePort: 5757
       ingress:
-        host: competition-test.sharevic.net
+        host: competition.sharevic.net
   ingress:
     zone: ch
   service:
