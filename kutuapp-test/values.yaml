@@ -9,10 +9,10 @@ kutuapp:
   network:
     frontend:
       servicePort: 5757
-      ingress:
-        host: competition.sharevic.net
-  ingress:
-    zone: ch
+  #    ingress:
+  #      host: competition.sharevic.net
+  #ingress:
+  #  zone: ch
   service:
     type: ClusterIP        
   resources:
