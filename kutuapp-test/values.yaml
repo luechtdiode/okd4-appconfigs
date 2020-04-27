@@ -25,9 +25,9 @@ kutuapp:
   #   value: dev
   persistence:
     name: kutuapp-data
-    storageClassName: cephfs # ceph-block
+    storageClassName: ceph-block # cephfs
     enabled: true
-    accessModes: ReadWriteMany
+    accessModes: ReadWriteOnce
     size: 1Gi
     annotations:
       volume.beta.kubernetes.io/storage-provisioner: rook-ceph.rbd.csi.ceph.com
