@@ -25,13 +25,7 @@ kutuapp:
   #   value: dev
   persistence:
     name: kutu-data
-    storageClassName: ceph-block
     enabled: false
-    accessModes: ReadWriteMany
-    volumeMode: Block
-    size: 10Gi
-    annotations:
-      volume.beta.kubernetes.io/storage-provisioner: rook-ceph.rbd.csi.ceph.com
   volumes:
   - name: kutu-data
     persistentVolumeClaim:
