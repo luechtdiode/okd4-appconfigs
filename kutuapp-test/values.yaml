@@ -24,11 +24,11 @@ kutuapp:
   # - name: SPRING_PROFILES_ACTIVE
   #   value: dev
   persistence:
-    name: kutuapp-data
-    storageClass: trident-nfs
-    enabled: true
-    accessModes: ReadWriteMany
-    size: 1Gi
+    name: kutu-data
+    # storageClass: trident-nfs
+    enabled: false
+    # accessModes: ReadWriteMany
+    # size: 1Gi
 
   volumeMounts:
   - mountPath: /home/kutuapp
