@@ -8,9 +8,9 @@ metadata:
     - kubernetes.io/pvc-protection  
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 1Gi
   storageClassName: ceph-block
   volumeMode: Block      
