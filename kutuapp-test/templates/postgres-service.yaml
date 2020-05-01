@@ -4,12 +4,12 @@ metadata:
   labels:
     app: kutuapp
     component: postgres
-  name: db
+  name: postgres
   namespace: kutuapp-test
 spec:
   type: ClusterIP
   ports:
-  - name: "db-service"
+  - name: "postgres"
     port: 5432
     targetPort: 5432
   selector:

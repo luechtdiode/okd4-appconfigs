@@ -24,7 +24,7 @@ kutuapp:
     - name: X_DB_CONFIG_NAME
       value: kutudb_pg
     - name: X_POSTGRES_HOST
-      value: db-service
+      value: postgres
     - name: X_POSTGRES_USER
       value: kutuapp
     - name: X_POSTGRES_PASSWORD
