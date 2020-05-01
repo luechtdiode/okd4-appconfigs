@@ -20,9 +20,22 @@ kutuapp:
       memory: 1Gi
     limits:
       memory: 2Gi
-  # env:
-  # - name: SPRING_PROFILES_ACTIVE
-  #   value: dev
+  env:
+    - name: X_DB_CONFIG_NAME
+      value: kutudb_pg
+    - name: X_POSTGRES_HOST
+      value: postgres
+    - name: X_POSTGRES_USER
+      valueFrom:
+        secretKeyRef:
+          name: kutu-postgres-secret
+          key: user
+    - name: X_POSTGRES_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: kutu-postgres-secret
+          key: password
+
   persistence:
     name: kutuapp-data
     storageClass: ceph-block
