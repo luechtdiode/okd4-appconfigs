@@ -1,6 +1,5 @@
 |namespace|status
 |-|-|
-|ok4d-luechtdiode-apps|[![App Status](https://argocd.baloise.dev/api/badge?name=okd4-luechtdiode-apps)](hhttps://argocd.baloise.dev/applications/okd4-christian-apps)|
 |kutuapp-test|[![App Status](https://argocd.baloise.dev/api/badge?name=kutuapp-test)](https://argocd.baloise.dev/applications/kutuapp-test)|
 
 # Baloise Incubator OKD 4 Deployment Configuration

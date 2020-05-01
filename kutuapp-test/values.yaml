@@ -2,30 +2,57 @@ kutuapp:
   replicaCount: 1
   image:
     repository: luechtdiode/kutuapp
-    tag: master-263041c
+    tag: master-dbeee78
   ports:
     http:
       containerPort: 5757
-  ingress:
+  network:
+    frontend:
+      servicePort: 5757
+  #    ingress:
+  #      host: competition.sharevic.net
+  #ingress:
+  #  zone: ch
+  service:
+    type: ClusterIP        
   resources:
     requests:
       memory: 1Gi
     limits:
       memory: 2Gi
-  # env:
-  # - name: SPRING_PROFILES_ACTIVE
-  #   value: dev
-  volumes:
-  - name: kutu-data
-    emptyDir: {}
+  env:
+    - name: X_DB_CONFIG_NAME
+      value: kutudb_pg
+    - name: X_POSTGRES_HOST
+      value: postgres
+    - name: X_POSTGRES_USER
+      value: kutuapp
+    - name: X_POSTGRES_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: kutu-postgres-secret
+          key: password
 
+  persistence:
+    name: kutuapp-data
+    storageClass: cephfs
+    enabled: true
+    accessModes: ReadWriteMany
+    size: 1Gi
+    annotations:
+      pv.kubernetes.io/bound-by-controller: 'yes'
+      volume.beta.kubernetes.io/storage-provisioner: rook-ceph.rbd.csi.ceph.com
+  # volumes:
+  # - name: kutuapp-data
+  #    persistentVolumeClaim:
+  #     claimName: kutu-data
   volumeMounts:
   - mountPath: /home/kutuapp
     subPath: appdataroot
-    name: kutu-data
+    name: kutuapp-data
   - mountPath: /home/kutuapp/data
     subPath: data
-    name: kutu-data
+    name: kutuapp-data
   - mountPath: /home/kutuapp/db
     subPath: db
-    name: kutu-data
+    name: kutuapp-data
