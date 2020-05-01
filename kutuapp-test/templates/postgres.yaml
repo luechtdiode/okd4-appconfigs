@@ -73,7 +73,6 @@ spec:
             - name: kutu-data
               mountPath: /var/lib/pgsql/data
             - name: postgres-config
-              readonly: true
               mountPath: /docker-entrypoint-initdb.d/  
           terminationMessagePolicy: File
           image: postgres:12.1-alpine
