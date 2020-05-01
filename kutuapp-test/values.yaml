@@ -35,9 +35,9 @@ kutuapp:
 
   persistence:
     name: kutuapp-data
-    storageClass: ceph-block
+    storageClass: cephfs
     enabled: true
-    accessModes: ReadWriteOnce
+    accessModes: ReadWriteMany
     size: 1Gi
     annotations:
       pv.kubernetes.io/bound-by-controller: 'yes'
