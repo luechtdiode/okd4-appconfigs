@@ -47,19 +47,14 @@ spec:
           terminationMessagePath: /dev/termination-log
           name: postgres
           env:
-            - name: POSTGRESQL_DATABASE
-              value: kutuapp
-            - name: POSTGRESQL_ADMIN_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: kutu-postgres-secret
-                  key: adminpassword            
-            - name: POSTGRESQL_USER
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata            
+            - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
                   name: kutu-postgres-secret
                   key: user
-            - name: POSTGRESQL_PASSWORD
+            - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: kutu-postgres-secret
