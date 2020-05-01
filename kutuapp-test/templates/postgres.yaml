@@ -70,7 +70,7 @@ spec:
               protocol: TCP
           imagePullPolicy: IfNotPresent
           volumeMounts:
-            - name: kutu-data
+            - name: postgres-data
               mountPath: /var/lib/pgsql/data
             - name: postgres-config
               mountPath: /docker-entrypoint-initdb.d/  
