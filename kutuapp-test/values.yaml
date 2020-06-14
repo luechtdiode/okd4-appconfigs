@@ -2,7 +2,7 @@ kutuapp:
   replicaCount: 1
   image:
     repository: luechtdiode/kutuapp
-    tag: fix.comput-round-time-with-empty-squad-6daebbd
+    tag: feature.wettkampf-subscription-52b0a59
   ports:
     http:
       containerPort: 5757
