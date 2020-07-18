@@ -3,16 +3,11 @@ kutuapp:
   image:
     repository: luechtdiode/kutuapp
     tag: feature.wettkampf-subscription-893b3b8
-  ports:
-    http:
-      containerPort: 5757
   network:
-    frontend:
+    http:
       servicePort: 5757
-  #    ingress:
-  #      host: competition.sharevic.net
-  #ingress:
-  #  zone: ch
+      # ingress:
+      #  host: competition.sharevic.net
   service:
     type: ClusterIP        
   resources:
@@ -34,9 +29,9 @@ kutuapp:
           key: password
 
   persistence:
+    enabled: true
     name: kutuapp-data
     storageClass: cephfs
-    enabled: true
     accessModes: ReadWriteMany
     size: 1Gi
     annotations:
