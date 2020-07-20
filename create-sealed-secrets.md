@@ -14,6 +14,7 @@ kubectl create secret generic kutu-postgres-secret \
 login with oc login, set curent project.
 
 follow instructions from here
-https://github.com/baloise-incubator/okd4-cluster-infra-apps/blob/master/sealed-secrets/HOWTOENCRYPT.md#fetch-certificate-optional
+https://github.com/baloise-incubator/okd4-cluster-infra-apps/tree/master/sealed-secrets
 
-kubeseal --namespace=kutuapp-test --cert ~/kubeseal/kubeseal.crt  -oyaml <mysecret.yaml >mysealedsecret.yaml
+/c/dev/kubeseal --namespace=kutuapp-test --cert https://raw.githubusercontent.com/baloise-incubator/okd4-cluster-infra-apps/master/sealed-secrets/kubeseal.crt  -oyaml <mysecret.yaml >mysealedsecret.yaml
+
