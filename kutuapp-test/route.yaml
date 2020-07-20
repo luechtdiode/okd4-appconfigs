@@ -13,7 +13,7 @@ spec:
     name: kutuapp
     weight: 100
   port:
-    targetPort: frontend
+    targetPort: http
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
