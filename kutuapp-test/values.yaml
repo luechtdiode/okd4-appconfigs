@@ -2,7 +2,7 @@ kutuapp:
   replicaCount: 1
   image:
     repository: luechtdiode/kutuapp
-    tag: feature.wettkampf-subscription-500acb3
+    tag: feature.wettkampf-subscription-a7a6793
   network:
     http:
       servicePort: 5757
